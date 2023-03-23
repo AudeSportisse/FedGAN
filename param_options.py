@@ -86,7 +86,7 @@ def args_parser():
     # 用于W-GAN
     parser.add_argument('--clip_gradient', type=str, default=1e-2, help='WGAN model name')
     parser.add_argument('--clip_value', type=float, default=0.1, help='the gradient clip value of WGAN')
-    parser.add_argument('--gan_categories', type=str, default='wGAN', help='the class of GAN')
+    parser.add_argument('--gan_categories', type=str, default='notwGAN', help='the class of GAN')
     parser.add_argument('--lambda_term', type=float, default=10, help='the guassian clip lambda value of WGAN')
     parser.add_argument('--n_critic', type=int, default=5, help='the n_criitic of WGAN')
     # other arguments
