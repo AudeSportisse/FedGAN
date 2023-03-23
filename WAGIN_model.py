@@ -2,7 +2,7 @@ import torch
 from torch import nn
 import numpy as np
 
-#torch.cuda.set_device(0)
+torch.cuda.set_device(0)
 
 
 def xavier_init(size):
