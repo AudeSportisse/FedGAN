@@ -86,7 +86,7 @@ class GANUpdate(object):
                 tq.set_description('Local Updating')
                 mb_idx = self.sample_idx(self.Train_No, mb_size)#self.sample_idx(self.Train_No, mb_size)
                 print(mb_idx)
-                print(X_mb.shape)
+                print(self.trainX.shape)
                 X_mb = self.trainX[mb_idx, :]
 
                 Z_mb = sample_Z(mb_size, self.args.input_dim)
