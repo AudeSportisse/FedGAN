@@ -84,7 +84,9 @@ class GANUpdate(object):
             for j in tq:  # 暂时取消self.args.local_ep *
                 self.cur_epoch = j
                 tq.set_description('Local Updating')
-                mb_idx = self.sample_idx(self.Train_No, mb_size)
+                mb_idx = self.sample_idx(self.Train_No, mb_size)#self.sample_idx(self.Train_No, mb_size)
+                print(mb_idx)
+                print(X_mb.shape)
                 X_mb = self.trainX[mb_idx, :]
 
                 Z_mb = sample_Z(mb_size, self.args.input_dim)
