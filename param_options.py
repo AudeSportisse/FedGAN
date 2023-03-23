@@ -69,7 +69,7 @@ def args_parser():
     parser.add_argument('--independent_usrs_training', type=bool, default=True, help="if independent_usrs_training")
 
     # CGAIN model arguments
-    parser.add_argument('--input_dim', type=int, default=128, help="生成网络输入随机噪声层的单元数量")
+    parser.add_argument('--input_dim', type=int, default=6, help="生成网络输入随机噪声层的单元数量")
     parser.add_argument('--G_hidden_dim', type=int, default=64, help="生成网络隐藏层的单元数量")
     parser.add_argument('--D_hidden_dim', type=int, default=64, help="判别网络隐藏层的单元数量")
     parser.add_argument('--model', type=str, default='FCGAI', help='model name')
