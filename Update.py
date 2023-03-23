@@ -86,9 +86,6 @@ class LocalUpdate(object):
                 H_mb1 = self.sample_M(mb_size, self.Dim, 1 - self.p_hint)
                 H_mb = M_mb * H_mb1
 
-            print(M_mb.shape)
-            print(X_mb.shape)
-            print(Z_mb.shape)
                 
             New_X_mb = M_mb * X_mb + (1 - M_mb) * Z_mb  # Missing Data Introduce
 
@@ -231,6 +228,10 @@ class LocalUpdate(object):
                     H_mb1 = self.sample_M(mb_size, self.Dim, 1 - self.p_hint)
                     H_mb = M_mb * H_mb1
 
+                print(M_mb.shape)
+                print(X_mb.shape)
+                print(Z_mb.shape)
+            
                 New_X_mb = M_mb * X_mb + (1 - M_mb) * Z_mb  # Missing Data Introduce
 
                 X_mb = torch.tensor(X_mb, device=self.args.device, dtype=torch.float32)
