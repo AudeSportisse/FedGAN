@@ -39,7 +39,7 @@ class GANUpdate(object):
         fw_fed_main = open(fw_name, 'w+')
         fw_fed_main.write('iter\t G_loss\t D_loss\t G_train_MSE_loss\t G_test_MSE_loss\t \n')
 
-        mb_size = self.args.local_bs
+        mb_size_true = self.args.local_bs
         # local 参与方的优化器
         # optimizer_D = torch.optim.SGD(params=D.parameters(), lr=self.args.d_lr)
         # optimizer_G = torch.optim.SGD(params=G.parameters(), lr=self.args.g_lr)
@@ -84,9 +84,9 @@ class GANUpdate(object):
             for j in tq:  # 暂时取消self.args.local_ep *
                 self.cur_epoch = j
                 tq.set_description('Local Updating')
+                mb_size = min(mb_size_true,len(self.trainX.shape))
                 mb_idx = self.sample_idx(self.Train_No, mb_size)#self.sample_idx(self.Train_No, mb_size)
-                print(mb_idx)
-                print(self.trainX.shape)
+                
                 X_mb = self.trainX[mb_idx, :]
 
                 Z_mb = sample_Z(mb_size, self.args.input_dim)
